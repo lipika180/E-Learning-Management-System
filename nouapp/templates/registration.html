@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block main %}
+<div class="row">
+    <div class="col-sm-12 p-0" style="background-image: linear-gradient(rgba(0 ,0 ,0, 0.708),rgba(0, 0, 0, 0.708)), url('../static/IMG/main.jpg'); height: 400px; background-size: cover; background-position: center; background-attachment: fixed;">
+        <h1 style="margin-top:170px; margin-left: 30px; color: azure;">Registration Page</h1>
+        <h6 style=" margin-left: 30px; color: azure; font-size: 20px;" class="fw-bold"><a href="" style="text-decoration: none; color: azure;">Home</a>/ <a href="" style="text-decoration: none; color: darkred;">Registration Page</a></h6>
+        </div>
+      </div>
+      {% for mess in messages %}
+      <div class="alert alert-success mt-3" role="alert">
+        {{mess}}
+      </div>
+      {% endfor %}
+      <form method="post">
+        {%csrf_token%}
+      <div class="row p-3 m-4 border border-dark ">
+        <div class="col-sm-6 mt-3">
+            <p>Enter Rollno</p>
+            <input type="text" name="rollno" id="" class="form-control rounded-0 border-dark">
+        </div>
+            <div class="col-sm-6 mt-3">
+                <p>Enter Name</p>
+                <input type="text" name="name" id="" class="form-control rounded-0 border-dark">
+            </div>
+                <div class="col-sm-6 mt-3">
+                    <p>Enter Father's Name</p>
+                    <input type="text" name="fname" id="" class="form-control rounded-0 border-dark">
+                </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Mother's Name</p>
+                        <input type="text" name="mname" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Gender</p>
+                        Male<input type="radio" name="gender" id="" value="Male">
+                        Female<input type="radio" name="gender" id="" value="Female">
+                        Other<input type="radio" name="gender" id="" value="Other">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Program's</p>
+                        <input type="text" name="program" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Branch</p>
+                        <input type="text" name="branch" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Year</p>
+                        <input type="text" name="year" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Mobile</p>
+                        <input type="text" name="mobile" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Email</p>
+                        <input type="text" name="email" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-6 mt-3">
+                        <p>Enter Password</p>
+                        <input type="text" name="password" id="" class="form-control rounded-0 border-dark">
+                    </div>
+                    <div class="col-sm-12 mt-3">
+                        <p>Enter Address</p>
+                       <textarea name="address" id="" class="form-control rounded-0 border-dark p-3"></textarea>
+                    </div>
+                    <div class="col-sm-12 mt-3">
+                        <input type="submit" id="" class="form-control rounded-0 border-dark p-2" style="background-color: darkred; color: white;">
+                    </div>
+                    </div></form>
+                    
+                    
+                    
+
+       
+                    
+
+       
+
+       
+       
+      </div>
+{% endblock %}

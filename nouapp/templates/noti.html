@@ -1,0 +1,30 @@
+{% extends 'adminzone.html' %}
+{% load static %}
+{% block admin %}
+<h1 class="text-center mt-4">Add Notification</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            {% for i in meessages %}
+            <div class="alert alert-success" role="alert">
+                {{i}}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="">
+        {% csrf_token %}
+        <div class="row bg-white shadow p-3">
+            <div class="col-sm-12">
+                <p>Enter Notification</p>
+                <input type="text" name="noti" id="" class="form-control">
+            </div>
+            <div class="col-sm-12 mt-3">
+                <input type="submit" class="form-control rounded-0 border-0" style="background-color: darkred; color: white;">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

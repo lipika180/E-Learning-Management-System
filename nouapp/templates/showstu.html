@@ -1,0 +1,57 @@
+{% extends 'adminzone.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {% block admin %}
+    <h2 class="text-center mt-4">Manage Students</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table mt-3">
+                <thead>
+                    <tr class="text-center table-dark text-light">
+                        <th>Rollno</th>
+                        <th>Name</th>
+                        <th>Father's Name</th>
+                        <th>Mother's Name</th> 
+                        <th>Gender</th> 
+                        <th>Program</th> 
+                        <th>Branch</th> 
+                        <th>Year</th>
+                        <th>Email</th>  
+                        <th>Contact No</th>
+                        <th>Action</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in Show %}
+                    <tr>
+                        <td>{{i.rollno}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.fname}}</td>
+                        <td>{{i.mname}}</td>
+                        <td>{{i.gender}}</td>
+                        <td>{{i.program}}</td>
+                        <td>{{i.branch}}</td>
+                        <td>{{i.year}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.mobile}}</td>
+                        <td><a href=""><span><button>Edit</button></span></a>
+                            <a href=""><span>Reset</span></a></td>
+                            <i class="fa-solid fa-trash" style="color: #f52500;"></i>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

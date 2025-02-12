@@ -1,0 +1,69 @@
+{% extends 'layout.html'%}
+{% load static %}
+{% block main %}
+<div class="row">
+    <div class="col-sm-12 p-0" style="background-image: linear-gradient(rgba(0 ,0 ,0, 0.708),rgba(0, 0, 0, 0.708)), url('../static/IMG/main.jpg'); height: 400px; background-size: cover; background-position: center; background-attachment: fixed;">
+    <h1 style="margin-top:170px; margin-left: 30px; color: azure;">Contact Us Page</h1>
+    <h6 style=" margin-left: 30px; color: azure; font-size: 20px;" class="fw-bold"><a href="" style="text-decoration: none; color: azure;">Home</a>/ <a href="" style="text-decoration: none; color: darkred;">Contact Us</a></h6>
+    </div>
+    <div class="container">
+        {% for i in messages %}
+    <div class="alert alert-success mt-3" role="alert">
+        {{i}}
+      </div>
+    {% endfor %}
+    </div>
+    <div class="container">
+    <div class="row p-5">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6 border rounded-2 shadow-lg p-5 text-center" style="width: 47%">
+                    <span style="font-size: 45px;"><i class="fa solid fa-phone fa-bounce"></i></span>
+                    <p class="mb-0 mt-2">Mob:+91 00000 00000</p>
+                    <p class="mt-0">Mob:+91 00000 00000</p>
+                </div>
+                <div class="col-sm-6 border rounded-2 shadow-lg p-5 text-center" style="width: 47%; margin-left: 30px;">
+                    <span style="font-size: 45px;"><i class="fa-regular fa-envelope fa-shake"></i></span>
+                    <p class="mb-0 mt-2">E-Mail:info.egyan@gmail.com</p>
+                    <p class="mt-0">E-Mail:info.egyan@gmail.com</p>
+                </div>
+                <div class="col-sm-12 border rounded-2 shadow-lg p-5 text-center" style="width: 98%; margin-top: 30px;">
+                    <span style="font-size: 45px;"><i class="fa-solid fa-location-dot fa-beat"></i></span>
+                    <p class="mt-3">Address: Biscomaun Bhawan, 2nd, 3rdFloor,Gandhi Maidan Rd,Patna, Bihar 800001</p>
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-sm-6">
+         <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Enter Name</p>
+                    <input type="text" name="name" id="" class="form-control border-dark">
+                </div>
+                <div class="col-sm-12 mt-3">
+                    <p>Enter Mobile</p>
+                    <input type="text" name="contactno" id="" class="form-control border-dark">
+                </div>
+                <div class="col-sm-12 mt-3">
+                    <p>Enter Email</p>
+                    <input type="text" name="email" id="" class="form-control border-dark">
+                </div>
+                <div class="col-sm-12 mt-3">
+                    <p>Enter Address</p>
+                    <textarea name="address" id="" class="form-control border-dark"></textarea>
+                </div>
+                <div class="col-sm-12 mt-3">
+                    <p>Enter Enquiry</p>
+                    <textarea name="enqtxt" id="" class="form-control border-dark"></textarea>
+                </div>
+                <div class="col-sm-12 mt-3">
+                   <input type="submit" class="btn w-100 text-center text-light" style="background-color: darkred;">
+                </div>
+            </div>
+         </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
